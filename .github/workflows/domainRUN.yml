@@ -23,7 +23,7 @@ jobs:
         with:
           # Repository name with owner. For example, actions/checkout
           # Default: ${{ github.repository }}
-          repository: 'mkorthof/freenom-script'
+          repository: mkorthof/freenom-script
       - name: create      
         run: make docker
       # - name: Run the build process with Docker
