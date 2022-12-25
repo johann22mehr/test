@@ -12,8 +12,8 @@ jobs:
     steps:
         - name: test1
           run: ls
-        - name: test2 
-          run: freenom -l
+     #   - name: test2 
+     #     run: freenom -l
         - name: test3 
           run: docker run --rm --env freenom_email=${{  secrets.EMAIL }} --env freenom_passwd=${{  secrets.PW }} ghcr.io/mkorthof/freenom-script -l
             
