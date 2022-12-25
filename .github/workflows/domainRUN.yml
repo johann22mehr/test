@@ -20,6 +20,8 @@ jobs:
     steps:
       # - name: Check out the repo
       #   uses: actions/checkout@v2
+      - name: Pull docker container 
+        run: docker pull ghcr.io/mkorthof/freenom_script:latest
       - name: Run the build process with Docker
         uses: addnab/docker-run-action@v3
         with:
