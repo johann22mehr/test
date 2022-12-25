@@ -10,11 +10,11 @@ jobs:
         freenom_email: ${{  secrets.EMAIL }}
         freenom_passwd: ${{  secrets.PW }}
       steps:
-        - name: test1
-          run: ls
-        - name: test2 
-          run: freenom 
-          
+          - name: test1
+            run: ls
+          - name: test2 
+            run: freenom -l
+            
 
 
 
