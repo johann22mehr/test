@@ -17,15 +17,15 @@ jobs:
   #       - name: test3 
   #         run: docker run --rm --env freenom_email=${{  secrets.EMAIL }} --env freenom_passwd=${{  secrets.PW }} ghcr.io/mkorthof/freenom-script -l
             
-        steps:
-          # - name: Check out the repo
-          #   uses: actions/checkout@v2
-          - name: Run the build process with Docker
-            uses: addnab/docker-run-action@v3
-            with:
-                image: ghcr.io/mkorthof/freenom_script:latest
-                options: -rm --env freenom_email=${{  secrets.EMAIL }} --env freenom_passwd=${{  secrets.PW }} ghcr.io/mkorthof/freenom-script -l
-            
+    steps:
+      # - name: Check out the repo
+      #   uses: actions/checkout@v2
+      - name: Run the build process with Docker
+        uses: addnab/docker-run-action@v3
+        with:
+            image: ghcr.io/mkorthof/freenom_script:latest
+            options: -rm --env freenom_email=${{  secrets.EMAIL }} --env freenom_passwd=${{  secrets.PW }} ghcr.io/mkorthof/freenom-script -l
+        
 
 
 
