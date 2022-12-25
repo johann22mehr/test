@@ -22,12 +22,13 @@ jobs:
       #   uses: actions/checkout@v2
       - name: Pull docker container 
         run: docker pull ghcr.io/mkorthof/freenom_script:latest
-      - name: Run the build process with Docker
-        uses: addnab/docker-run-action@v3
-        with:
-            image: ghcr.io/mkorthof/freenom_script:latest
-            options: --env freenom_email=${{  secrets.EMAIL }} --env freenom_passwd=${{  secrets.PW }} ghcr.io/mkorthof/freenom-script -l
-        
+      # - name: Run the build process with Docker
+      #   uses: addnab/docker-run-action@v3
+      #   with:
+      #       image: ghcr.io/mkorthof/freenom_script:latest
+      #       options: --env freenom_email=${{  secrets.EMAIL }} --env freenom_passwd=${{  secrets.PW }} ghcr.io/mkorthof/freenom-script -l
+      - name: RUN docker 
+        run: docker run --rm --env freenom_email=${{  secrets.EMAIL }} --env freenom_passwd=${{  secrets.PW }} ghcr.io/mkorthof/freenom-script -l
 
 
 
