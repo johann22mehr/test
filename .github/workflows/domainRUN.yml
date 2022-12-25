@@ -34,5 +34,6 @@ jobs:
       - name: RUN docker 
         run: docker run --rm --env freenom_email=${{  secrets.EMAIL }} --env freenom_passwd=${{  secrets.PW }} freenom-script:latest -r -a
 
-
+      - name: log
+        run: cat /tmp/freenom.log
 
