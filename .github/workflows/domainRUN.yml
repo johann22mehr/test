@@ -18,10 +18,13 @@ jobs:
   #         run: docker run --rm --env freenom_email=${{  secrets.EMAIL }} --env freenom_passwd=${{  secrets.PW }} ghcr.io/mkorthof/freenom-script -l
             
     steps:
-      # - name: Check out the repo
-      #   uses: actions/checkout@v2
-      - name: Pull docker container 
-        run: docker pull ghcr.io/mkorthof/freenom_script:latest
+      - name: Pull and create 
+      - uses: actions/checkout@v3
+        with:
+          # Repository name with owner. For example, actions/checkout
+          # Default: ${{ github.repository }}
+          repository: 'mkorthof/freenom-script'
+        run: make docker
       # - name: Run the build process with Docker
       #   uses: addnab/docker-run-action@v3
       #   with:
