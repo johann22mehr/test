@@ -24,7 +24,7 @@ jobs:
         uses: addnab/docker-run-action@v3
         with:
             image: ghcr.io/mkorthof/freenom_script:latest
-            options: -rm --env freenom_email=${{  secrets.EMAIL }} --env freenom_passwd=${{  secrets.PW }} ghcr.io/mkorthof/freenom-script -l
+            options: --env freenom_email=${{  secrets.EMAIL }} --env freenom_passwd=${{  secrets.PW }} ghcr.io/mkorthof/freenom-script -l
         
 
 
