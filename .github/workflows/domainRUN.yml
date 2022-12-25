@@ -7,13 +7,15 @@ jobs:
     container:
       image: ghcr.io/mkorthof/freenom_script
       credentials:
-        freenom_email: ${{  secrets.EMAIL }}
-        freenom_passwd: ${{  secrets.PW }}
+   #     freenom_email: ${{  secrets.EMAIL }}
+   #     freenom_passwd: ${{  secrets.PW }}
     steps:
         - name: test1
           run: ls
         - name: test2 
           run: freenom -l
+        - name: test3 
+          run: docker run --rm --env freenom_email=${{  secrets.EMAIL }} --env freenom_passwd=${{  secrets.PW }} ghcr.io/mkorthof/freenom-script -l
             
 
 
