@@ -34,7 +34,9 @@ jobs:
       #       image: ghcr.io/mkorthof/freenom_script:latest
       #       options: --env freenom_email=${{  secrets.EMAIL }} --env freenom_passwd=${{  secrets.PW }} ghcr.io/mkorthof/freenom-script -l
       - name: RUN docker 
-        run: docker run --rm --env freenom_email=${{  secrets.EMAIL }} --env freenom_passwd=${{  secrets.PW }} freenom-script:latest -r -a
+        run: |
+        docker run --rm --env freenom_email=${{  secrets.EMAIL }} --env freenom_passwd=${{  secrets.PW }} freenom-script:latest -l
+      # docker run --rm --env freenom_email=${{  secrets.EMAIL }} --env freenom_passwd=${{  secrets.PW }} freenom-script:latest -r -a
 
       - name: log
         run: cat /tmp/freenom.log
