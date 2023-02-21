@@ -1,8 +1,8 @@
 name: Domain RUN
 on:
-  #workflow_dispatch:
-  schedule:
-  - cron: '5 4 * * 1'
+  workflow_dispatch:
+  # schedule:
+  # - cron: '5 4 * * 1'
 jobs:
   script:
     runs-on: ubuntu-latest
